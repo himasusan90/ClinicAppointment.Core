@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClinicAppointment.Core.Aggregates
 {
-    public class Doctor: BaseEntity<int>
+    public class Doctor: BaseEntity<int>, IAggregateRoot
     {
         public string Name { get; set; }
         public string Email { get; set; }

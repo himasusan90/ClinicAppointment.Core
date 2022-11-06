@@ -7,14 +7,14 @@ using ClinicAppointment.Core.Common;
 
 namespace ClinicAppointment.Core.Aggregates
 {
-    public class Appointment: BaseEntity<Guid>
+    public class Appointment: BaseEntity<Guid>, IAggregateRoot
     {
         public string Title { get; set; }
         public string Description { get; set; }
         public int PatientId { get;  set; }
         public int DoctorId { get;  set; }
-        public DateTime? StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         public Guid ScheduleId { get;  set; }
         private Appointment()
         {
@@ -29,8 +29,8 @@ namespace ClinicAppointment.Core.Aggregates
             Description= desc;
             PatientId = patientId;
             DoctorId = doctorId;
-            StartDate = startDate;
-            EndDate = endDate;
+            StartTime = startDate;
+            EndTime = endDate;
             ScheduleId = scheduleId;
         }
 

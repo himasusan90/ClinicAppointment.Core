@@ -8,7 +8,7 @@ using ClinicAppointment.Core.Events;
 
 namespace ClinicAppointment.Core.Aggregates
 {
-    public class Schedule:BaseEntity<Guid>
+    public class Schedule:BaseEntity<Guid>, IAggregateRoot
     {
         public IList<Appointment> Appointments { get; set; }=new List<Appointment>(){ };
         public DateTime Date { get;  set; }
@@ -16,6 +16,10 @@ namespace ClinicAppointment.Core.Aggregates
         {
             Date = date;
             Id= id;
+        }
+        public Schedule()
+        {
+            Id= Guid.NewGuid();
         }
         public void AddNewAppointment(Appointment appointment)
         {

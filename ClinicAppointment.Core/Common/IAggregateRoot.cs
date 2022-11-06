@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClinicAppointment.Core.Repositories
+namespace ClinicAppointment.Core.Common
 {
-    public class AppointmentRepository
+    public interface IAggregateRoot
     {
     }
 }
