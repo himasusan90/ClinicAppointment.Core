@@ -1,3 +1,5 @@
+using ClinicAppointment.Core.Repositories;
+using ClinicAppointment.Core.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +34,7 @@ namespace ClinicAppointment.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ClinicAppointment.API", Version = "v1" });
             });
+            services.AddScoped<IScheduleRepository, ScheduleRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
